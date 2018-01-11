@@ -15,7 +15,7 @@ Taxi.Files.Validation.YellowLayout MakeValidationRec(Taxi.Files.ETL.YellowLayout
     SELF.is_valid_latlong :=        inRec.pickup_latitude BETWEEN 40 AND 45
                                 AND inRec.pickup_longitude BETWEEN -80 AND -70
                                 AND inRec.dropoff_latitude BETWEEN 40 AND 45
-                                AND inRec.dropoff_longitude BETWEEN 40 AND -70;
+                                AND inRec.dropoff_longitude BETWEEN -80 AND -70;
     SELF.is_valid_rate_code_id := inRec.rate_code_id IN [1, 2, 3, 4, 5, 6];
     SELF.is_valid_payment_type := inRec.payment_type IN [1, 2, 3, 4, 5, 6];
     SELF.is_total_amt_equal_sum := inRec.total_amount = inRec.fare_amount + inRec.extra + inRec.mta_tax 
